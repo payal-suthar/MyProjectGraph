@@ -19,7 +19,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.soilab.R;
-import com.e.soilab.model.AvaliableModel;
 import com.e.soilab.network.Api;
 import com.e.soilab.network.ApiClient;
 import com.e.soilab.network.NetworkUtil;
@@ -36,13 +35,11 @@ import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -51,10 +48,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
-import lecho.lib.hellocharts.model.Axis;
-import lecho.lib.hellocharts.model.AxisValue;
-import lecho.lib.hellocharts.model.PointValue;
-import lecho.lib.hellocharts.view.ColumnChartView;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -72,7 +65,6 @@ public class AvailableActivity extends AppCompatActivity {
     String machin_ID = "5";
     Date date = new Date();
     Context context;
-    private List<AvaliableModel> list = new ArrayList<>();
     LinkedHashMap<String,String> start_time_list = new LinkedHashMap<>();
     LinkedHashMap<String,String> end_time_list = new LinkedHashMap<>();
     LinkedHashMap<String,String> time_list = new LinkedHashMap<>();
@@ -159,22 +151,6 @@ public class AvailableActivity extends AppCompatActivity {
         txt_Date.setText(currentDate + ", " + dayOfTheWeek);
         Log.e("eeeeee", currentTime + " " + currentDate);
 
-        txt_VerticalBandSaw.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AvailableActivity.this, VerticalBandSaw.class);
-                startActivity(intent);
-            }
-        });
-
-
-        img_report.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AvailableActivity.this, ActivitySelectProblem.class);
-                startActivity(intent);
-            }
-        });
 
     }
 
@@ -186,32 +162,6 @@ public class AvailableActivity extends AppCompatActivity {
         txt_Time = findViewById(R.id.txt_Time);
         txt_Date = findViewById(R.id.txt_Day);
 
-//        txt_Nine = findViewById(R.id.txt_Nine);
-//        txt_Ten = findViewById(R.id.txt_Ten);
-//        txt_Eleven = findViewById(R.id.txt_Eleven);
-//        txt_Twleav = findViewById(R.id.txt_Twlave);
-//        txt_Thirty = findViewById(R.id.txt_Thirty);
-//        txt_Fourity = findViewById(R.id.txt_Fourity);
-//        txt_Fifteen = findViewById(R.id.txt_Fifty);
-//        txt_Sixteen = findViewById(R.id.txt_Sixteen);
-//        txt_Seventeen = findViewById(R.id.txt_Seventeen);
-//        txt_Eighteen = findViewById(R.id.txt_Eighteen);
-//        txt_NineTeen = findViewById(R.id.txt_NineTeen);
-//        txt_Twenty = findViewById(R.id.txt_Tweeenty);
-//        txt_TwentyOne = findViewById(R.id.txt_Twennteyone);
-//        txt_Nine_Grey = findViewById(R.id.txt_Nine_Grey);
-//        txt_Ten_Grey = findViewById(R.id.txt_Ten_Grey);
-//        txt_Eleven_Grey = findViewById(R.id.txt_Eleven_Grey);
-//        txt_Twelave_Grey = findViewById(R.id.txt_Twelave_Grey);
-//        txt_Thirty_Grey = findViewById(R.id.txt_Thirty_Grey);
-//        txt_Fourity_Grey = findViewById(R.id.txt_Fourity_Grey);
-//        txt_Fifty_Grey = findViewById(R.id.txt_Fifty_Grey);
-//        txt_Sixteen_Grey = findViewById(R.id.txt_Sixteen_Grey);
-//        txt_Seventeen_Grey = findViewById(R.id.txt_Seventeen_Grey);
-//        txt_Eighteen_Grey = findViewById(R.id.txt_Eighteen_Grey);
-//        txt_NineTeen_Grey = findViewById(R.id.txt_NineTeen_Grey);
-//        txt_NineTeen_Grey = findViewById(R.id.txt_NineTeen_Grey);
-//        txt_Twennteyone_Grey = findViewById(R.id.txt_Twennteyone_Grey);
 
         txt_Status.setText(statusnew);
         Calendar now = Calendar.getInstance();
@@ -296,7 +246,6 @@ public class AvailableActivity extends AppCompatActivity {
                             int mach_green_uri = jsonObject.optInt("mach_green_uri");
                             int mach_purple_uri = jsonObject.optInt("mach_purple_uri");
 
-                            list.add(new AvaliableModel(mach_sch_time_from, mach_status));
                             start_time_list.put(mach_sch_time_from, mach_status);
                             end_time_list.put(mach_sch_time_to, mach_status);
                             endtime.add(Float.parseFloat(mach_sch_time_to));
@@ -507,10 +456,10 @@ public class AvailableActivity extends AppCompatActivity {
                         stockChart.getAxisRight().setLabelCount(13, true);
                         stockChart.getAxisRight().setDrawLabels(true);
 
-                     // stockChart.getAxisRight().setValueFormatter(new newBarChartXaxisFormatter());
+                    stockChart.getAxisRight().setValueFormatter(new newBarChartXaxisFormatter());
 
-                        CategoryBarChartXaxisFormatter xaxisFormatter = new CategoryBarChartXaxisFormatter(xvalues);
-                        stockChart.getAxisRight().setValueFormatter(xaxisFormatter);
+//                        CategoryBarChartXaxisFormatter xaxisFormatter = new CategoryBarChartXaxisFormatter(xvalues);
+//                        stockChart.getAxisRight().setValueFormatter(xaxisFormatter);
 
                         stockChart.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -540,60 +489,6 @@ public class AvailableActivity extends AppCompatActivity {
     }
 
 }
-/*
-        nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        if(nfcAdapter == null){
-            Toast.makeText(this,
-                    "NFC NOT supported on this devices!",
-                    Toast.LENGTH_LONG).show();
-            finish();
-        }else if(!nfcAdapter.isEnabled()){
-            Toast.makeText(this,
-                    "NFC NOT Enabled!",
-                    Toast.LENGTH_LONG).show();
-            finish();
-        }
-*/
-
-   /* @Override
-    protected void onResume() {
-        super.onResume();
-        Intent intent = getIntent();
-        String action = intent.getAction();
-
-        if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)) {
-            Toast.makeText(this,
-                    "onResume() - ACTION_TAG_DISCOVERED",
-                    Toast.LENGTH_SHORT).show();
-
-            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-            if(tag == null){
-                textViewInfo.setText("tag == null");
-            }else{
-                String tagInfo = tag.toString() + "\n";
-
-                tagInfo += "\nTag Id: \n";
-                byte[] tagId = tag.getId();
-                tagInfo += "length = " + tagId.length +"\n";
-                for(int i=0; i<tagId.length; i++){
-                    tagInfo += Integer.toHexString(tagId[i] & 0xFF) + " ";
-                }
-                tagInfo += "\n";
-
-                String[] techList = tag.getTechList();
-                tagInfo += "\nTech List\n";
-                tagInfo += "length = " + techList.length +"\n";
-                for(int i=0; i<techList.length; i++){
-                    tagInfo += techList[i] + "\n ";
-                }
-
-                textViewInfo.setText(tagInfo);
-            }
-        }else{
-            Toast.makeText(this,
-                    "onResume() : " + action,
-                    Toast.LENGTH_SHORT).show();
-        }
 
 
-    }*/
+

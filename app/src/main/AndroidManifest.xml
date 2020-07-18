@@ -29,9 +29,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ActivityProfile"/>
-        <activity android:name=".activity.ActivitySelectProblem"/>
-        <activity android:name=".activity.VerticalBandSaw"/>
         <activity android:name=".activity.MainActivity"/>
     </application>
 

@@ -14,10 +14,5 @@ public interface Api
     @POST("API/UserData/GetMachSchListByMachID")
     Call<ResponseBody> getMachineDetails(@Field("machine_id") String machine_id);
 
-    @FormUrlEncoded
-    @POST("API/UserData/GetMemProfileAC")
-    Call<ResponseBody> getProfile(@Field("mem_id") String mem_id);
-
-
 
 }
