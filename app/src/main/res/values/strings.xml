@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Soilab</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetuer_adipiscing_elit_sed_diam_nonummy_nibh_euismod_tincidunt_ut_laoreet_dolore_magna_aliquam_erat_volutpat_ut_wisi_enim_ad_minim_veniam_quis_nostrud_exerci_tation_ullamcorper_suscipit_lobortis_nisl_ut_aliquip_ex_ea_commodo_consequat_duis_autem_vel_eum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum</string>
+    <string name="Mychart">MyChart</string>
+    <string name="time">%d</string>
+</resources>

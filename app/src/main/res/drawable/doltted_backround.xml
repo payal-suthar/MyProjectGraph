@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadiusRatio="3"
+    android:shape="ring"
+    android:thickness="4dp"
+    android:useLevel="false">
+
+    <stroke
+        android:width="4dp"
+        android:color="#cccccc"
+        android:dashWidth="2dp"
+        android:dashGap="15dp"/>
+
+</shape>
+
+
+<!--
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <size
+        android:width="@dimen/size_100dp"
+        android:height="@dimen/size_100dp"/>
+
+    <stroke
+        android:width="3dp"
+        android:color="#cccccc"
+        android:dashWidth="2dp"
+        android:dashGap="8dp"/>
+
+
+
+    <corners
+
+        android:bottomLeftRadius="2700dp"
+        android:bottomRightRadius="2700dp"
+        android:topLeftRadius="2700dp"
+        android:topRightRadius="2700dp"/>-->
+    <!--
+
+
+        <size android:width="@dimen/size_150dp"/>
+
+
+        <stroke
+            android:width="5dp"
+            android:color="#cccccc"
+            android:dashWidth="5dp"
+            android:dashGap="8dp"/>
+
+        &lt;!&ndash;
+            <padding android:left="7dp" android:top="7dp"
+                android:right="7dp" android:bottom="7dp" />
+        &ndash;&gt;
+
+        <corners
+
+            android:bottomLeftRadius="2700dp"
+            android:bottomRightRadius="2700dp"
+            android:topLeftRadius="2700dp"
+            android:topRightRadius="2700dp"/>
+    -->
+<!--
+
+</shape>
+-->

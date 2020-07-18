@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:padding="10dp"
+       android:layout_centerVertical="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey"
+            android:layout_weight="1.2"
+            android:layout_marginBottom="@dimen/size_20dp"
+            android:layout_marginStart="30dp">
+
+
+            <TextView
+                android:id="@+id/txt_VerticalBandSaw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VERTICAL BAND SAW"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10sp"
+                android:layout_marginEnd="10sp"
+                android:fontFamily="@font/roboto_medium"
+                app:fontFamily="@font/roboto_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_VerticalBandSaw"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/machine"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp">
+
+            <RelativeLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="90dp"
+                    android:layout_marginEnd="60dp"
+                    android:text="@string/lorem_ipsum_dolor_sit_amet_consectetuer_adipiscing_elit_sed_diam_nonummy_nibh_euismod_tincidunt_ut_laoreet_dolore_magna_aliquam_erat_volutpat_ut_wisi_enim_ad_minim_veniam_quis_nostrud_exerci_tation_ullamcorper_suscipit_lobortis_nisl_ut_aliquip_ex_ea_commodo_consequat_duis_autem_vel_eum"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_medium"
+                    app:fontFamily="@font/roboto_medium"/>
+
+                <ImageView
+                    android:id="@+id/img_BackArrow"
+                    android:layout_width="@dimen/size_50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="@dimen/size_100dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_backarrow" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_Puprple"
+                android:layout_width="5dp"
+                android:layout_height="@dimen/size_150dp"
+                android:background="@color/purple"
+                android:layout_below="@id/linearLayout"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="50dp"/>
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/size_30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/linearLayout"
+                android:weightSum="2"
+                android:layout_toRightOf="@id/txt_Puprple"
+                android:layout_marginTop="50dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp">
+
+
+                <LinearLayout
+                    android:id="@+id/layout_ClassRequired"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp">
+
+                    <TextView
+                        android:id="@+id/txt_ClassRequired"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Classes Required :"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_weight="1.3"
+                        android:fontFamily="@font/roboto_medium"
+                        app:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="INTRODUCTION TO WOOD BASICS"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/roboto_medium"
+                        app:fontFamily="@font/roboto_medium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_Material"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/layout_ClassRequired"
+                    android:weightSum="2"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Materials :"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:layout_weight="1.3"
+                        android:fontFamily="@font/roboto_medium"
+                        app:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="WOOD"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:textColor="@color/white"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/roboto_medium"
+                        app:fontFamily="@font/roboto_medium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_PopularProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/layout_Material"
+                    android:weightSum="2"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginStart="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Popular products:"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_weight="1.3"
+                        android:fontFamily="@font/roboto_medium"
+                        app:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="FURNITUR"
+                        android:textSize="14sp"
+                        android:textStyle="italic"
+                        android:textColor="@color/white"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/roboto_medium"
+                        app:fontFamily="@font/roboto_medium"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
